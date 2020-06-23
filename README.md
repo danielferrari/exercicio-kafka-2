@@ -2,6 +2,10 @@
 
 ## Microsserviços
 
-- **cadastro**: realiza o cadastro das empresas enviando para fila do Kafka
-- **valida-cadastro**: listener do Kafka que realiza validação envia os dados para o microsserviço de logs
-- **log-cadastro**: recebe o resultado da validação via endpoint REST e grava em um arquivo de log
+- **empresa**: realiza o cadastro das empresas e envia para o tópico 1
+- **valida-cadastro**: realiza validação dos dados enviados pelo microsserviço de empresa e envia as empresas válidas para o tópico 2
+- **log-cadastro**: recebe as empresas válidas por listener do Kafka e grava em um arquivo de log
+
+## Tópicos Kafka
+- **1 - spec2-daniel-victor-2**: empresas cadastradas
+- **2 - spec2-daniel-victor-3**: empresas válidas
